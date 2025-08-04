@@ -2,70 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="A romantic Valentine's Day animated heart with beautiful music - Created with love">
+    <meta name="keywords" content="valentine, love, heart, animation, romantic">
+    <meta name="author" content="Love">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rkruk.github.io/valentine-day/">
+    <meta property="og:title" content="Jola ❤️">
+    <meta property="og:description" content="A romantic Valentine's Day animated heart with beautiful music">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://rkruk.github.io/valentine-day/">
+    <meta property="twitter:title" content="Jola ❤️">
+    <meta property="twitter:description" content="A romantic Valentine's Day animated heart with beautiful music">
+    
     <title>Jola ❤️</title>
     <style>
-            body, html {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                background: linear-gradient(135deg, #ad013a, #7B6762);
-            }
+        /* Modern CSS Reset */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ad013a, #7B6762);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-            .heart {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                width: 105px;
-                height: 105px;
-                margin: -52.5px 0 0 -52.5px;
-            }
+        .heart {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 105px;
+            height: 105px;
+            margin: -52.5px 0 0 -52.5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .heart:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 4px;
+        }
 
-            .heart:hover::before {
-                animation-play-state: paused;
-                -webkit-animation-play-state: paused;
-                border-radius: 100%;
-                opacity: 0;
-            }
+        .heart:hover::before {
+            animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+        }
 
-            .heart::before {
-                content: '';
-                display: block;
-                transition: all 400ms;
-                animation: pulse 1.2s steps(1) infinite;
-                -webkit-animation: pulse 1.2s steps(1) infinite;
-                width: 15px;
-                height: 15px;
-                margin: -15px 0 0 -15px;
-                box-shadow: 
-                    30px 15px #8e1a19, 45px 15px #ac0500, 75px 15px #f73f0c, 90px 15px #fa5f27,
-                    15px 30px #740100, 30px 30px #8e0500, 45px 30px #8e1918, 60px 30px #ca1300, 
-                    75px 30px #f34f2b, 90px 30px #df351f, 105px 30px #f77c2a,
-                    15px 45px #4b0000, 30px 45px #690100, 45px 45px #8e0f0b, 60px 45px #bf1000, 
-                    75px 45px #f84010, 90px 45px #f04222, 105px 45px #fa5724,
-                    15px 60px #451312, 30px 60px #5a0100, 45px 60px #840e0c, 60px 60px #a51d1a, 
-                    75px 60px #ed2805, 90px 60px #d9321e, 105px 60px #f44622,
-                    30px 75px #3b0000, 45px 75px #5d1a1b, 60px 75px #8e1a19, 75px 75px #a80700, 
-                    90px 75px #b90a00,
-                    45px 90px #3d0000, 60px 90px #551415, 75px 90px #670100,
-                    60px 105px #340000;
-            }
+        .heart::before {
+            content: '';
+            display: block;
+            transition: all 0.4s ease;
+            animation: pulse 1.2s steps(1) infinite;
+            -webkit-animation: pulse 1.2s steps(1) infinite;
+            -moz-animation: pulse 1.2s steps(1) infinite;
+            -o-animation: pulse 1.2s steps(1) infinite;
+            width: 15px;
+            height: 15px;
+            margin: -15px 0 0 -15px;
+            box-shadow: 
+                30px 15px #8e1a19, 45px 15px #ac0500, 75px 15px #f73f0c, 90px 15px #fa5f27,
+                15px 30px #740100, 30px 30px #8e0500, 45px 30px #8e1918, 60px 30px #ca1300, 
+                75px 30px #f34f2b, 90px 30px #df351f, 105px 30px #f77c2a,
+                15px 45px #4b0000, 30px 45px #690100, 45px 45px #8e0f0b, 60px 45px #bf1000, 
+                75px 45px #f84010, 90px 45px #f04222, 105px 45px #fa5724,
+                15px 60px #451312, 30px 60px #5a0100, 45px 60px #840e0c, 60px 60px #a51d1a, 
+                75px 60px #ed2805, 90px 60px #d9321e, 105px 60px #f44622,
+                30px 75px #3b0000, 45px 75px #5d1a1b, 60px 75px #8e1a19, 75px 75px #a80700, 
+                90px 75px #b90a00,
+                45px 90px #3d0000, 60px 90px #551415, 75px 90px #670100,
+                60px 105px #340000;
+        }
 
-            @keyframes pulse {
-                50% {
-                    filter: blur(1.4px);
-                    -webkit-filter: blur(1.4px);
-                    transform: translate(-2px, 2px);
-                    -webkit-transform: translate(-2px, 2px);
-                }
+        @keyframes pulse {
+            50% {
+                filter: blur(1.4px);
+                -webkit-filter: blur(1.4px);
+                -moz-filter: blur(1.4px);
+                transform: translate(-2px, 2px);
+                -webkit-transform: translate(-2px, 2px);
+                -moz-transform: translate(-2px, 2px);
+                -o-transform: translate(-2px, 2px);
             }
+        }
 
-            @-webkit-keyframes pulse {
-                50% {
-                    -webkit-filter: blur(1.4px);
-                    -webkit-transform: translate(-2px, 2px);
-                }
+        @-webkit-keyframes pulse {
+            50% {
+                -webkit-filter: blur(1.4px);
+                -webkit-transform: translate(-2px, 2px);
             }
+        }
+        
+        @-moz-keyframes pulse {
+            50% {
+                -moz-filter: blur(1.4px);
+                -moz-transform: translate(-2px, 2px);
+            }
+        }
+        
+        @-o-keyframes pulse {
+            50% {
+                -o-transform: translate(-2px, 2px);
+            }
+        }
 
             /* Responsive design improvements */
             @media (max-width: 768px) {
@@ -120,36 +167,72 @@
                 }
             }
 
-            /* Audio styling */
-            audio {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                opacity: 0.8;
-                transition: opacity 0.3s ease;
-            }
+        /* Enhanced Audio Styling */
+        audio {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
 
-            audio:hover {
-                opacity: 1;
+        audio:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        
+        audio:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* Mobile Audio Optimization */
+        @media (max-width: 768px) {
+            audio {
+                bottom: 10px;
+                right: 10px;
+                opacity: 0.9;
+                transform: scale(0.9);
             }
+        }
     </style>
 </head>
 <body>
-    <div class="heart"></div>
-    <audio controls autoplay loop preload="auto">
+    <main role="main">
+        <div class="heart" 
+             role="button" 
+             tabindex="0"
+             aria-label="Animated heart - click to interact"
+             title="Beautiful animated heart"></div>
+    </main>
+    
+    <audio controls 
+           autoplay 
+           loop 
+           preload="auto"
+           aria-label="Background music: When We Collide">
         <source src="media/When_We_Collide.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <p>Your browser does not support the audio element. Please update to a modern browser to enjoy the background music.</p>
     </audio>
     
     <script>
-        // Modern audio handling
+        // Modern audio handling with enhanced error management
         const audio = document.querySelector('audio');
+        const heart = document.querySelector('.heart');
         
-        // Handle autoplay restrictions in modern browsers
-        const playAudio = () => {
-            audio.play().catch(e => {
-                console.log('Autoplay prevented, user interaction required');
-            });
+        // Enhanced audio play function with better error handling
+        const playAudio = async () => {
+            try {
+                await audio.play();
+                console.log('Audio playing successfully');
+            } catch (error) {
+                console.log('Autoplay prevented:', error.message);
+                // Show a subtle indication that user interaction is needed
+                heart.style.filter = 'brightness(1.1)';
+                setTimeout(() => {
+                    heart.style.filter = '';
+                }, 1000);
+            }
         };
         
         // Try to play when page loads
@@ -159,22 +242,50 @@
         
         // Play on first user interaction if autoplay failed
         let hasInteracted = false;
-        const enableAutoplay = () => {
+        const enableAutoplay = async () => {
             if (!hasInteracted) {
                 hasInteracted = true;
-                playAudio();
+                await playAudio();
                 document.removeEventListener('click', enableAutoplay);
                 document.removeEventListener('keydown', enableAutoplay);
+                document.removeEventListener('touchstart', enableAutoplay);
             }
         };
         
+        // Multiple interaction event listeners
         document.addEventListener('click', enableAutoplay);
         document.addEventListener('keydown', enableAutoplay);
+        document.addEventListener('touchstart', enableAutoplay, { passive: true });
         
-        // Handle audio loading errors gracefully
+        // Enhanced audio error handling
         audio.addEventListener('error', (e) => {
-            console.log('Audio file could not be loaded');
+            console.error('Audio file could not be loaded:', e);
             audio.style.display = 'none';
+            // Optional: Show fallback message
+            console.log('Background music unavailable - enjoying in silence');
+        });
+        
+        // Audio loading success feedback
+        audio.addEventListener('loadeddata', () => {
+            console.log('Audio loaded successfully');
+        });
+        
+        // Keyboard accessibility for heart
+        heart.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                heart.click();
+            }
+        });
+        
+        // Performance optimization: Preload critical resources
+        window.addEventListener('load', () => {
+            // Optimize animations for better performance
+            if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
+                // Mobile optimizations
+                document.body.style.willChange = 'transform';
+                heart.style.willChange = 'transform, filter';
+            }
         });
     </script>
 </body>
