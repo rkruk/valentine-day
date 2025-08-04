@@ -2,6 +2,10 @@
 
 An animated website featuring a pixel-art heart with background music, modernized to 2025 web standards.
 
+## Live Demo
+
+Visit: [https://rkruk.github.io/valentine-day/](https://rkruk.github.io/valentine-day/)
+
 ## Features
 
 - **Animated Pixel Heart**: Hand-crafted CSS pixel art created using `box-shadow` technique
@@ -71,10 +75,6 @@ All rights reserved.
 
 The background track used on this website was created by Rafał Kruk using Udio.
 You may not use, redistribute, or remix this track without explicit permission from the author.
-
-## Live Demo
-
-Visit: [https://rkruk.github.io/valentine-day/](https://rkruk.github.io/valentine-day/)
 
 ---
 
