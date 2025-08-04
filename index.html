@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset=utf-8>
-    <title>Jola <3</title>
-            <style type=text/css media=screen>
-            body,html {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jola ❤️</title>
+    <style>
+            body, html {
                 width: 100%;
                 height: 100%;
                 margin: 0;
@@ -20,6 +22,7 @@
             }
 
             .heart:hover::before {
+                animation-play-state: paused;
                 -webkit-animation-play-state: paused;
                 border-radius: 100%;
                 opacity: 0;
@@ -29,11 +32,32 @@
                 content: '';
                 display: block;
                 transition: all 400ms;
+                animation: pulse 1.2s steps(1) infinite;
                 -webkit-animation: pulse 1.2s steps(1) infinite;
                 width: 15px;
                 height: 15px;
                 margin: -15px 0 0 -15px;
-                box-shadow: 30px 15px #8e1a19, 45px 15px #ac0500, 75px 15px #f73f0c, 90px 15px #fa5f27, 15px 30px #740100, 30px 30px #8e0500, 45px 30px #8e1918, 60px 30px #ca1300, 75px 30px #f34f2b, 90px 30px #df351f, 105px 30px #f77c2a, 15px 45px #4b0000, 30px 45px #690100, 45px 45px #8e0f0b, 60px 45px #bf1000, 75px 45px #f84010, 90px 45px #f04222, 105px 45px #fa5724, 15px 60px #451312, 30px 60px #5a0100, 45px 60px #840e0c, 60px 60px #a51d1a, 75px 60px #ed2805, 90px 60px #d9321e, 105px 60px #f44622, 30px 75px #3b0000, 45px 75px #5d1a1b, 60px 75px #8e1a19, 75px 75px #a80700, 90px 75px #b90a00, 45px 90px #3d0000, 60px 90px #551415, 75px 90px #670100, 60px 105px #340000;
+                box-shadow: 
+                    30px 15px #8e1a19, 45px 15px #ac0500, 75px 15px #f73f0c, 90px 15px #fa5f27,
+                    15px 30px #740100, 30px 30px #8e0500, 45px 30px #8e1918, 60px 30px #ca1300, 
+                    75px 30px #f34f2b, 90px 30px #df351f, 105px 30px #f77c2a,
+                    15px 45px #4b0000, 30px 45px #690100, 45px 45px #8e0f0b, 60px 45px #bf1000, 
+                    75px 45px #f84010, 90px 45px #f04222, 105px 45px #fa5724,
+                    15px 60px #451312, 30px 60px #5a0100, 45px 60px #840e0c, 60px 60px #a51d1a, 
+                    75px 60px #ed2805, 90px 60px #d9321e, 105px 60px #f44622,
+                    30px 75px #3b0000, 45px 75px #5d1a1b, 60px 75px #8e1a19, 75px 75px #a80700, 
+                    90px 75px #b90a00,
+                    45px 90px #3d0000, 60px 90px #551415, 75px 90px #670100,
+                    60px 105px #340000;
+            }
+
+            @keyframes pulse {
+                50% {
+                    filter: blur(1.4px);
+                    -webkit-filter: blur(1.4px);
+                    transform: translate(-2px, 2px);
+                    -webkit-transform: translate(-2px, 2px);
+                }
             }
 
             @-webkit-keyframes pulse {
@@ -42,12 +66,116 @@
                     -webkit-transform: translate(-2px, 2px);
                 }
             }
-            </style>
-            </head>
-            <body>
-                <div class=heart></div>
-                <audio controls autoplay loop>
-                   <source src="media/When_We_Collide.mp3" type="audio/mp3">
-                </audio>
-            </body>
+
+            /* Responsive design improvements */
+            @media (max-width: 768px) {
+                .heart {
+                    width: 84px;
+                    height: 84px;
+                    margin: -42px 0 0 -42px;
+                }
+                
+                .heart::before {
+                    width: 12px;
+                    height: 12px;
+                    margin: -12px 0 0 -12px;
+                    box-shadow: 
+                        24px 12px #8e1a19, 36px 12px #ac0500, 60px 12px #f73f0c, 72px 12px #fa5f27,
+                        12px 24px #740100, 24px 24px #8e0500, 36px 24px #8e1918, 48px 24px #ca1300, 
+                        60px 24px #f34f2b, 72px 24px #df351f, 84px 24px #f77c2a,
+                        12px 36px #4b0000, 24px 36px #690100, 36px 36px #8e0f0b, 48px 36px #bf1000, 
+                        60px 36px #f84010, 72px 36px #f04222, 84px 36px #fa5724,
+                        12px 48px #451312, 24px 48px #5a0100, 36px 48px #840e0c, 48px 48px #a51d1a, 
+                        60px 48px #ed2805, 72px 48px #d9321e, 84px 48px #f44622,
+                        24px 60px #3b0000, 36px 60px #5d1a1b, 48px 60px #8e1a19, 60px 60px #a80700, 
+                        72px 60px #b90a00,
+                        36px 72px #3d0000, 48px 72px #551415, 60px 72px #670100,
+                        48px 84px #340000;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .heart {
+                    width: 63px;
+                    height: 63px;
+                    margin: -31.5px 0 0 -31.5px;
+                }
+                
+                .heart::before {
+                    width: 9px;
+                    height: 9px;
+                    margin: -9px 0 0 -9px;
+                    box-shadow: 
+                        18px 9px #8e1a19, 27px 9px #ac0500, 45px 9px #f73f0c, 54px 9px #fa5f27,
+                        9px 18px #740100, 18px 18px #8e0500, 27px 18px #8e1918, 36px 18px #ca1300, 
+                        45px 18px #f34f2b, 54px 18px #df351f, 63px 18px #f77c2a,
+                        9px 27px #4b0000, 18px 27px #690100, 27px 27px #8e0f0b, 36px 27px #bf1000, 
+                        45px 27px #f84010, 54px 27px #f04222, 63px 27px #fa5724,
+                        9px 36px #451312, 18px 36px #5a0100, 27px 36px #840e0c, 36px 36px #a51d1a, 
+                        45px 36px #ed2805, 54px 36px #d9321e, 63px 36px #f44622,
+                        18px 45px #3b0000, 27px 45px #5d1a1b, 36px 45px #8e1a19, 45px 45px #a80700, 
+                        54px 45px #b90a00,
+                        27px 54px #3d0000, 36px 54px #551415, 45px 54px #670100,
+                        36px 63px #340000;
+                }
+            }
+
+            /* Audio styling */
+            audio {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                opacity: 0.8;
+                transition: opacity 0.3s ease;
+            }
+
+            audio:hover {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <audio controls autoplay loop preload="auto">
+        <source src="media/When_We_Collide.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        // Modern audio handling
+        const audio = document.querySelector('audio');
+        
+        // Handle autoplay restrictions in modern browsers
+        const playAudio = () => {
+            audio.play().catch(e => {
+                console.log('Autoplay prevented, user interaction required');
+            });
+        };
+        
+        // Try to play when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            playAudio();
+        });
+        
+        // Play on first user interaction if autoplay failed
+        let hasInteracted = false;
+        const enableAutoplay = () => {
+            if (!hasInteracted) {
+                hasInteracted = true;
+                playAudio();
+                document.removeEventListener('click', enableAutoplay);
+                document.removeEventListener('keydown', enableAutoplay);
+            }
+        };
+        
+        document.addEventListener('click', enableAutoplay);
+        document.addEventListener('keydown', enableAutoplay);
+        
+        // Handle audio loading errors gracefully
+        audio.addEventListener('error', (e) => {
+            console.log('Audio file could not be loaded');
+            audio.style.display = 'none';
+        });
+    </script>
+</body>
 </html>
